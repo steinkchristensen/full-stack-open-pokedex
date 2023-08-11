@@ -29,11 +29,12 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: http://localhost:8080
-      - name: Deploy to Server 1
-        uses: easingthemes/ssh-deploy@main
+      - name: ssh deploy on aws ec2
+        uses: easingthemes/ssh-deploy@v2.1.4
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
+          REMOTE_PORT: 22
+          SOURCE: "build/"
           TARGET: ${{ secrets.TARGET_DIR }}
-
