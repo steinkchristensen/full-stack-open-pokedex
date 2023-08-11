@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 
 const PokemonList = ({ pokemonList }) => {
   return (
-    
     <div className="list-container">
       <p>Pokemon</p>
       {pokemonList.map(({ id, name }) => (
