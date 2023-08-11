@@ -32,9 +32,8 @@ jobs:
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
-          aws-access-key-id: AKIAUDYZDHFOERO4WA7F
-          aws-secret-access-key: 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
-          aws-region: us-west-2
-          instance-ids: i-0a785e523baaca5e1
-          comment: Deploy the master branch
-          command: /bin/sh ./deploy.sh
+          host: YOUR_EC2_PUBLIC_IP_OR_HOSTNAME
+          username: YOUR_SSH_USERNAME
+          key: ${{ secrets.YOUR_PRIVATE_SSH_KEY_SECRET_NAME }}
+          script: /bin/sh ./deploy.sh
+
