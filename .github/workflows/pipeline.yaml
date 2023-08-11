@@ -3,7 +3,7 @@ name: Linting and testing
 on:
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   simple_deployment_pipeline:

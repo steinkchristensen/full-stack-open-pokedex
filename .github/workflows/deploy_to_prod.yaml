@@ -1,8 +1,6 @@
 name: deploy to prod
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch: # Manually trigger the workflow
 
 jobs:
   simple_deployment_pipeline:
