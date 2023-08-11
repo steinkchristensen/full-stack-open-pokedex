@@ -1,9 +1,9 @@
 name: Linting and testing
 
 on:
-  push:
+  pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   simple_deployment_pipeline:
