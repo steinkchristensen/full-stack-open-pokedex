@@ -29,11 +29,11 @@ jobs:
           build: npm run build
           start: npm start
           wait-on: http://localhost:8080
-      - name: executing remote ssh commands using ssh key
-        uses: appleboy/ssh-action@master
-        with:
-          host: YOUR_EC2_PUBLIC_IP_OR_HOSTNAME
-          username: YOUR_SSH_USERNAME
-          key: ${{ secrets.YOUR_PRIVATE_SSH_KEY_SECRET_NAME }}
-          script: /bin/sh ./deploy.sh
+      - name: Deploy to Server 1
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
+          TARGET: ${{ secrets.TARGET_DIR }}
 
