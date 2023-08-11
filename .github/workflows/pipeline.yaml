@@ -36,5 +36,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           REMOTE_PORT: 22
-          SOURCE: "/home/ubuntu/full-stack-open-pokedex/dist"
-          TARGET: ${{ secrets.TARGET_DIR }}
+          SOURCE: "build/"
+          TARGET: "/home/ubuntu/full-stack-open-pokedex/"
