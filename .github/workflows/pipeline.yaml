@@ -1,7 +1,7 @@
 name: Linting and testing
 
 on:
-  push:
+  pull_request:
     branches:
       - master
 
